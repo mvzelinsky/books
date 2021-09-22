@@ -1,14 +1,16 @@
 import React from 'react';
 import '../styles/Card.css';
 
-export default function Card() {
+export default function Card(props) {
+  const book = props.book;
+  const imageUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`;
   return (
     <div className="card">
       <div className="image-container">
-        <img src="https://covers.openlibrary.org/b/id/258027-M.jpg" alt="" />
+        <img src={imageUrl} alt="Book cover" />
       </div>
-      <h4>The Lord of the Rings</h4>
-      <p>J. R. R. Tolkien</p>
+      <h4>{book.title}</h4>
+      <p>{book.author_name}</p>
     </div>
   );
 }

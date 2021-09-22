@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import '../styles/Form.css';
+import { getBooks } from './actions/books';
 
 export default function Form() {
+  const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState('');
+
+  function searchHandler() {
+    dispatch(getBooks(searchTerm));
+  }
 
   useEffect(() => {
     const delayFunc = setTimeout(() => {
-      console.log(searchTerm);
-      // Send Axios request here
-    }, 1000);
+      dispatch(getBooks(searchTerm));
+    }, 1500);
 
     return () => clearTimeout(delayFunc);
-  }, [searchTerm]);
+  }, [dispatch, searchTerm]);
 
   return (
     <div className="search-container">
@@ -28,7 +34,7 @@ export default function Form() {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
-      <button>Search</button>
+      <button onClick={() => searchHandler()}>Search</button>
     </div>
   );
 }

@@ -3,29 +3,51 @@
   background-color: rgb(240, 240, 240);
   margin-bottom: 20px;
   flex: 0 1 calc(100%);
+  text-align: center;
+}
+
+.card:hover {
+  box-shadow: 0 0 15px rgb(180, 180, 180);
+  cursor: pointer;
 }
 
 .image-container {
   display: block;
   border: 0;
   width: 100%;
-  height: auto;
+  margin-bottom: 15px;
 }
 
-@media screen and (min-width: 33em) {
+.image-container img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.card h4,
+.card p {
+  margin: 10px 5px;
+}
+
+@media screen and (min-width: 20em) {
   .card {
     flex: 0 1 calc(50% - 1em);
   }
 }
 
+@media screen and (min-width: 40em) {
+  .card {
+    flex: 0 1 calc(33% - 1em);
+  }
+}
+
 @media screen and (min-width: 58em) {
   .card {
-    flex: 0 1 calc(33% - 2em);
+    flex: 0 1 calc(25% - 2em);
   }
 }
 
 @media screen and (min-width: 75em) {
   .card {
-    flex: 0 1 calc(25% - 2em);
+    flex: 0 1 calc(20% - 1em);
   }
 }
