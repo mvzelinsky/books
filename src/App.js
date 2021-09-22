@@ -1,5 +1,6 @@
 import Form from './components/Form';
 import Feed from './components/Feed';
+import Modal from './components/Modal';
 import './App.css';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <Form />
       <Feed />
+      <Modal />
     </div>
   );
 }

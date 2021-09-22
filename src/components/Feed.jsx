@@ -16,7 +16,11 @@ export default function Feed() {
 
   return (
     <div className="feed">
-      {isFetching === false ? books.map((book) => <Card book={book} />) : <h1>loading</h1>}
+      {isFetching === false ? (
+        books.map((book) => <Card book={book} key={book.key} />)
+      ) : (
+        <h1>loading</h1>
+      )}
     </div>
   );
 }

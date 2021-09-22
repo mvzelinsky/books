@@ -7,6 +7,8 @@ export default function Form() {
   const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState('');
 
+  console.log(searchTerm);
+
   function searchHandler() {
     dispatch(getBooks(searchTerm));
   }
